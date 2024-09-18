@@ -1,0 +1,20 @@
+{
+  "name": "starter-leptos",
+  "version": "0.0.1",
+  "main": "index.html",
+  "scripts": {
+    "tw": "tailwindcss -i style/input.css -o site/style/output.css",
+    "tw:dev": "tailwindcss -i style/input.css -o site/style/output.css --watch",
+    "tw:release": "tailwindcss -i style/input.css -o site/style/output.css --minify",
+    "dev": "trunk serve --open",
+    "clean": "rm ./site/style/output.css && rm -rf site/dist",
+    "build": "trunk build --release",
+    "install_trunk": "chmod 744 ./bin/install_trunk.rs && TRUNK_VERSION=0.20.3 ./bin/install_trunk.rs"
+  },
+  "repository": "git@github.com:talves/starter-leptos.git",
+  "author": "talves <tony@3alves.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "3.4.12"
+  }
+}
