@@ -69,7 +69,7 @@ fn Menu() -> impl IntoView {
             <MenuBar variant={MenuBarVariant::Default.get()}>
                     <div class="flex items-center justify-between">
                         <a href="/">
-                        <span class="flex-none font-weight-20 text-3xl text-btn dark:text-white">Starter</span>
+                        <span class="flex-none font-weight-20 text-3xl">Starter</span>
                         </a>
                         <div class="sm:hidden">
                             <MenuToggleButton on_change=set_active class="focus:outline-none p-1"

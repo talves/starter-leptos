@@ -21,13 +21,14 @@ impl ButtonVariant {
             "rounded-md",
             "border",
             "border-transparent",
-            "bg-primary",
             "text-white",
+            "bg-secondary",
+            "dark:bg-primary",
+            "dark:text-secondary",
             "hover:bg-opacity-50",
             "focus:outline-none",
             "transition-all",
             "text-md",
-            "dark:focus:ring-offset-gray-800",
         ];
         const OUTLINE: &'static [&'static str] = &[
             "px-4",
@@ -36,17 +37,19 @@ impl ButtonVariant {
             "items-center",
             "rounded-md",
             "border-2",
-            "border-gray-200",
+            "border-primary",
             "font-semibold",
-            "text-btn",
-            "dark:text-white",
+            "text-secondary_dark",
+            "dark:text-primary",
+            "hover:text-primary_dark",
             "hover:text-white",
             "hover:bg-primary",
             "focus:outline-none",
             "transition-all",
             "text-sm",
-            "dark:border-gray-700",
-            "dark:hover:border-primary-500",
+            "dark:border-primary",
+            "dark:hover:border-secondary",
+            "dark:hover:text-secondary",
         ];
         const GHOST: &'static [&'static str] = &[
             "px-4",
@@ -57,8 +60,8 @@ impl ButtonVariant {
             "border",
             "border-transparent",
             "font-semibold",
-            "text-btn",
-            "hover:text-primary",
+            "text-secondary_dark",
+            "hover:text-primary_dark",
             "dark:text-white",
             "dark:hover:text-primary",
             "transition-all",
@@ -72,11 +75,11 @@ impl ButtonVariant {
             "rounded-md",
             "transition-all",
             "text-lg",
-            "bg-primary",
-            "bg-opacity-70",
-            "dark:bg-secondary_dark",
-            "rounded-xl",
             "text-white",
+            "bg-secondary",
+            "dark:bg-primary",
+            "dark:text-secondary",
+            "bg-opacity-90",
             "hover:text-primary",
         ];
         match self {
@@ -146,7 +149,7 @@ pub struct ThemePageClass {
 
 pub fn default_page_class() -> ThemePageClass {
     ThemePageClass {
-        wrapper: "font-roboto bg-secondary dark:bg-secondary_dark",
+        wrapper: "font-roboto text-secondary dark:text-primary",
     }
 }
 
@@ -197,41 +200,42 @@ impl TypographyClass {
         const H1: &'static [&'static str] = &[
             "font-weight-20",
             "text-3xl",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
         const H2: &'static [&'static str] = &[
             "font-weight-20",
             "text-2xl",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
         const H3: &'static [&'static str] = &[
             "font-weight-20",
             "text-xl",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
         const H4: &'static [&'static str] = &[
             "font-weight-20",
             "text-md",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
         const H5: &'static [&'static str] = &[
             "font-weight-20",
             "text-sm",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
         const H6: &'static [&'static str] = &[
             "font-weight-20",
             "text-xs",
-            "text-primary",
-            "dark:text-gray-200",
+            "text-secondary_dark",
+            "dark:text-primary",
         ];
-        const P: &'static [&'static str] = &["text-primary", "dark:text-gray-200"];
-        const SPAN: &'static [&'static str] = &["flex-none", "text-primary", "dark:text-gray-200"];
+        const P: &'static [&'static str] = &["text-secondary_dark", "dark:text-primary"];
+        const SPAN: &'static [&'static str] =
+            &["flex-none", "text-secondary_dark", "dark:text-primary"];
         const CODE: &'static [&'static str] = &[
             "text-sm",
             "sm:text-base",

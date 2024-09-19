@@ -27,7 +27,7 @@ pub fn Features() -> impl IntoView {
             <p class="font-roboto text-[34px] lg:text-[48px] font-extrabold tracking-[110%] text-white">
               High Performance Web Framework.
             </p>
-            <p class="text-primary font-roboto text-[34px] lg:text-[48px] font-extrabold tracking-[110%] -mt-4">
+            <p class="text-secondary dark:text-primary font-roboto text-[34px] lg:text-[48px] font-extrabold tracking-[110%] -mt-4">
               Full stack, fully typed.
             </p>
 
@@ -38,7 +38,7 @@ pub fn Features() -> impl IntoView {
             <div class="mt-4">
             {features.into_iter()
               .map(|feature| view! { <div class="flex items-center justify-start text-white gap-2">
-                    <IconCheckMark class="w-4 fill-primary" />
+                    <IconCheckMark class="w-4 fill-secondary dark:fill-primary" />
                     <p>{feature}</p>
                   </div> })
               .collect::<Vec<_>>()}
@@ -54,7 +54,7 @@ pub fn Features() -> impl IntoView {
           <p class="text-white font-roboto max-lg:text-center font-extrabold max-lg:text-[30px] lg:text-[46px] leading-[110%]">
             Want to start contributing?
           </p>
-          <p class="text-primary font-roboto max-lg:text-center font-extrabold max-lg:text-[30px] lg:text-[46px] leading-[110%]">
+          <p class="text-secondary dark:text-primary font-roboto max-lg:text-center font-extrabold max-lg:text-[30px] lg:text-[46px] leading-[110%]">
             Check the code out on GitHub
           </p>
           <div class="max-sm:w-full mt-[20px]">
