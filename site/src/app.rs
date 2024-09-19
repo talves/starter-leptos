@@ -67,34 +67,34 @@ fn Menu() -> impl IntoView {
     view! {
         <MenuHeader variant={MenuHeaderVariant::Default.get()}>
             <MenuBar variant={MenuBarVariant::Default.get()}>
-                    <div class="flex items-center justify-between">
-                        <a href="/">
-                        <span class="flex-none font-weight-20 text-3xl">Starter</span>
-                        </a>
-                        <div class="sm:hidden">
-                            <MenuToggleButton on_change=set_active class="focus:outline-none p-1"
-                                icon_class="w-7 h-7 fill-gray-700 hover:fill-gray-500 dark:fill-gray-300 dark:hover:fill-gray-100 dark:hover:outline rounded-2xl" />
-                        </div>
+                <div class="flex items-center justify-between">
+                    <a href="/">
+                    <span class="flex-none font-weight-20 text-3xl">Starter</span>
+                    </a>
+                    <div class="sm:hidden">
+                        <MenuToggleButton on_change=set_active class="focus:outline-none p-1"
+                            icon_class="w-7 h-7 fill-gray-700 hover:fill-gray-500 dark:fill-gray-300 dark:hover:fill-gray-100 dark:hover:outline rounded-2xl" />
                     </div>
-                    <div class={move || match active(){ true => "transition-all duration-300 sm:block", false => "hidden transition-all duration-300 sm:block"}}>
-                        <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-                            <LinkButton href="/features" variant={ButtonVariant::Ghost.get()}>
-                                Features
-                            </LinkButton>
-                            <LinkButton href="/counter" variant={ButtonVariant::Ghost.get()}>
-                                Counter
-                            </LinkButton>
-                            <LinkButton href="/styleguide" variant={ButtonVariant::Ghost.get()}>
-                                StyleGuide
-                            </LinkButton>
-                        </div>
+                </div>
+                <div class={move || match active(){ true => "transition-all duration-300 sm:block", false => "hidden transition-all duration-300 sm:block"}}>
+                    <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
+                        <LinkButton href="/features" variant={ButtonVariant::Ghost.get()}>
+                            Features
+                        </LinkButton>
+                        <LinkButton href="/counter" variant={ButtonVariant::Ghost.get()}>
+                            Counter
+                        </LinkButton>
+                        <LinkButton href="/styleguide" variant={ButtonVariant::Ghost.get()}>
+                            StyleGuide
+                        </LinkButton>
                     </div>
+                </div>
 
-                    <div class={move || match active(){ true => "transition-all duration-300 sm:block", false => "hidden transition-all duration-300 sm:block"}}>
-                        <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-                            <ThemeToggleSwitch mode_fn={theme_mode} class={ToggleSwitchClassVariant::Encased.get()} />
-                        </div>
+                <div class={move || match active(){ true => "transition-all duration-300 sm:block", false => "hidden transition-all duration-300 sm:block"}}>
+                    <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
+                        <ThemeToggleSwitch mode_fn={theme_mode} class={ToggleSwitchClassVariant::Encased.get()} />
                     </div>
+                </div>
             </MenuBar>
         </MenuHeader>
     }

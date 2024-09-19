@@ -175,8 +175,8 @@ impl ToggleSwitchClassVariant {
             ToggleSwitchClassVariant::Knob => default_switch_class(),
             ToggleSwitchClassVariant::Encased => {
                 let mut encased = default_switch_class();
-                encased.switch = "translate-x-0 dark:translate-x-2.5 shadow shadow-gray-700/10 border border-gray-200 bg-gray-100 dark:border-primary dark:bg-gray-700 p-[3px] pointer-events-none inline-block h-5 w-5 transform rounded-full ring-0 transition-transform duration-300 ease-in-out";
-                encased.bar = "bg-gray-300/60 dark:bg-gray-200/40 rounded-full absolute left-0 right-0 h-6 top-1/2 translate-y-[-50%] ring-1";
+                encased.switch = "translate-x-0 dark:translate-x-2.5 shadow shadow-gray-700/10 border border-secondary/50 bg-secondary/60 dark:border-primary dark:bg-secondary/50 p-[2px] pointer-events-none inline-block h-5 w-5 transform rounded-full ring-0 transition-transform duration-300 ease-in-out";
+                encased.bar = "bg-gray-300/60 dark:bg-gray-200/40 rounded-full absolute left-0 right-0 h-5 top-1/2 translate-y-[-50%] ring-2 ring-secondary/50 dark:ring-primary";
                 encased
             }
         }
