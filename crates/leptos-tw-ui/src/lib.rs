@@ -3,6 +3,7 @@ use leptos::*;
 pub mod components;
 
 // Library items
+#[allow(dead_code)]
 #[derive(Debug, Clone)]
 pub struct OptionSignal<T: 'static>(Option<Signal<T>>);
 

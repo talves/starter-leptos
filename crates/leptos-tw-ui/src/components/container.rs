@@ -16,6 +16,7 @@ pub fn Container(
     }
 }
 
+#[allow(unused_braces)]
 #[component]
 pub fn ContainerFromProp<F, IV>(
     /// Takes a function (type F) that returns anything that can be

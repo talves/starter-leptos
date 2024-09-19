@@ -74,7 +74,7 @@ impl ButtonVariant {
             "text-lg",
             "bg-primary",
             "bg-opacity-70",
-            "dark:bg-btn",
+            "dark:bg-secondary_dark",
             "rounded-xl",
             "text-white",
             "hover:text-primary",
@@ -146,7 +146,7 @@ pub struct ThemePageClass {
 
 pub fn default_page_class() -> ThemePageClass {
     ThemePageClass {
-        wrapper: "font-roboto bg-btn dark:bg-secondary",
+        wrapper: "font-roboto bg-secondary dark:bg-secondary_dark",
     }
 }
 
