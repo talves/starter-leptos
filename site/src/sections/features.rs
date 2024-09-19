@@ -1,7 +1,7 @@
 use leptos::*;
 use leptos_tw_ui::components::icons::IconCheckMark;
 
-use crate::components::buttons::{GitHubButton, LeptosButton, StyleGuideButton};
+use crate::components::buttons::{GitHubButton, LeptosButton};
 
 #[component]
 pub fn Features() -> impl IntoView {
