@@ -9,7 +9,7 @@ pub fn Hero() -> impl IntoView {
           <h1 class="text-white text-center font-roboto text-[30px] sm:text-[40px] xl:text-[72px] font-extrabold leading-[110%] max-w-[994px]">
             Leptos Starter
           </h1>
-          <h2 class="text-white py-[25px] font-roboto text-[16px] lg:text-[20px] tracking-[160%] opacity-65 max-w-[798px] text-center">
+          <h2 class="text-secondary dark:text-primary font-roboto py-[25px] text-[16px] lg:text-[20px] tracking-[160%] opacity-65 max-w-[798px] text-center">
             This starter uses Tailwind and Leptos written in Rust.
           </h2>
 
