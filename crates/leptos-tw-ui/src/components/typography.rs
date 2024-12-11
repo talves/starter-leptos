@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 
 use super::variants::base::ClassVariant;
 
@@ -19,11 +19,11 @@ pub enum TypographyVariant {
 #[component]
 pub fn Typography(
     variant: TypographyVariant,
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     /// Implement trait TypographyClass for TypographyClassVariant
     #[prop(into, optional)]
     class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     match variant {
@@ -33,49 +33,50 @@ pub fn Typography(
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
+        // .into_view(),
         TypographyVariant::H2 => H2(H2Props {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::H3 => H3(H3Props {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::H4 => H4(H4Props {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::H5 => H5(H5Props {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::H6 => H6(H6Props {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::Paragraph => P(PProps {
             id,
             class,
             style,
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::Span { inline } => Span(SpanProps {
             id,
             class,
@@ -83,7 +84,7 @@ pub fn Typography(
             inline: Some(inline),
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::SpanInline => Span(SpanProps {
             id,
             class,
@@ -91,7 +92,7 @@ pub fn Typography(
             inline: Some(true),
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::Code { inline } => Code(CodeProps {
             id,
             class,
@@ -99,7 +100,7 @@ pub fn Typography(
             inline: Some(inline),
             children,
         })
-        .into_view(),
+        .into_any(),
         TypographyVariant::CodeInline => Code(CodeProps {
             id,
             class,
@@ -107,15 +108,15 @@ pub fn Typography(
             inline: Some(true),
             children,
         })
-        .into_view(),
-    }
+        .into_any(),
+    };
 }
 
 #[component]
 pub fn H1(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -127,9 +128,9 @@ pub fn H1(
 
 #[component]
 pub fn H2(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -141,9 +142,9 @@ pub fn H2(
 
 #[component]
 pub fn H3(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -155,9 +156,9 @@ pub fn H3(
 
 #[component]
 pub fn H4(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -169,9 +170,9 @@ pub fn H4(
 
 #[component]
 pub fn H5(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -183,9 +184,9 @@ pub fn H5(
 
 #[component]
 pub fn H6(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -197,9 +198,9 @@ pub fn H6(
 
 #[component]
 pub fn P(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -211,9 +212,9 @@ pub fn P(
 
 #[component]
 pub fn Span(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     #[prop(optional)] inline: Option<bool>,
     children: Children,
 ) -> impl IntoView {
@@ -226,9 +227,9 @@ pub fn Span(
 
 #[component]
 pub fn Code(
-    #[prop(into, optional)] id: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<ClassVariant>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] style: Option<String>,
     #[prop(optional)] inline: Option<bool>,
     children: Children,
 ) -> impl IntoView {

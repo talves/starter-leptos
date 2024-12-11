@@ -1,12 +1,10 @@
-use leptos::*;
-
-use crate::OptionMaybeSignal;
+use leptos::prelude::*;
 
 #[component]
 pub fn IconSun(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -26,9 +24,9 @@ pub fn IconSun(
 
 #[component]
 pub fn IconMoon(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -57,9 +55,9 @@ pub fn IconMoon(
 
 #[component]
 pub fn IconMenuOn(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -79,9 +77,9 @@ pub fn IconMenuOn(
 
 #[component]
 pub fn IconMenuOff(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -101,9 +99,9 @@ pub fn IconMenuOff(
 
 #[component]
 pub fn IconGitHub(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -124,9 +122,9 @@ pub fn IconGitHub(
 
 #[component]
 pub fn IconLeptos(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg
@@ -147,9 +145,9 @@ pub fn IconLeptos(
 
 #[component]
 pub fn IconCheckMark(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
 ) -> impl IntoView {
     view! {
         <svg

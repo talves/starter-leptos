@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_tw_ui::components::{
     buttons::button::LinkButton,
     icons::{IconGitHub, IconLeptos},

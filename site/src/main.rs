@@ -4,7 +4,7 @@ mod pages;
 mod sections;
 mod theme;
 
-use leptos::{logging::log, *};
+use leptos::{logging::log, prelude::*};
 
 use crate::app::App;
 
@@ -14,5 +14,5 @@ fn main() {
 
     log!("csr mode - mounting to body");
 
-    leptos::mount_to_body(|| view! { <App/> })
+    mount_to_body(|| view! { <App/> })
 }

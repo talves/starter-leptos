@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::Title;
 use leptos_tw_ui::components::{
     buttons::button::Button,
@@ -26,14 +26,12 @@ pub fn StyleGuidePage() -> impl IntoView {
             <ButtonSection/>
             <TypographySection/>
         </Main>
-        // An empty Fragment is not created on the DOM
-        {Fragment::new(vec![])}
     }
 }
 
 #[component]
 fn ButtonSection() -> impl IntoView {
-    let (disabled, set_disabled) = create_signal(false);
+    let (disabled, set_disabled) = signal(false);
 
     view! {
         <section class="max-w-[70rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
