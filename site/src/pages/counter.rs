@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::*;
 
 use crate::theme::ButtonVariant;
@@ -6,7 +6,7 @@ use leptos_tw_ui::components::buttons::button::{Button, LinkButton};
 
 #[component]
 pub fn CounterPage() -> impl IntoView {
-    let (value, set_value) = create_signal(0);
+    let (value, set_value) = signal(0);
 
     // thanks to https://tailwindcomponents.com/component/secondary-buttons-example for the showcase layout
     view! {

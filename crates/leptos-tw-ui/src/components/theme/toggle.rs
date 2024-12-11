@@ -1,11 +1,8 @@
-use crate::{
-    components::{
-        buttons::button::Button,
-        icons::{IconMenuOff, IconMenuOn, IconMoon, IconSun},
-    },
-    OptionMaybeSignal,
+use crate::components::{
+    buttons::button::Button,
+    icons::{IconMenuOff, IconMenuOn, IconMoon, IconSun},
 };
-use leptos::*;
+use leptos::prelude::*;
 use wasm_bindgen::JsCast;
 
 /// A function to return light/dark based on system pref or local storage (theme-mode)
@@ -93,12 +90,12 @@ pub fn theme_mode(toggle: bool) -> &'static str {
 
 #[component]
 pub fn ThemeToggleButton<F>(
-    #[prop(into, optional)] disabled: OptionMaybeSignal<bool>,
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] icon_light_class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] icon_dark_class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] disabled: MaybeProp<bool>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] icon_light_class: MaybeProp<String>,
+    #[prop(into, optional)] icon_dark_class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
     /// Required: Fn(bool) -> &'static str
     /// * (use leptos_tw_ui::components::theme::toggle::theme_mode)
     /// * Or write your own function
@@ -112,9 +109,9 @@ where
 
     view! {
         <Button
-            id=id.unwrap_or(Box::new(""))
+            id=id.unwrap_or_default()
             class=class
-            style=style.unwrap_or(Box::new(""))
+            style=style.unwrap_or_default()
             on_click={move |_e| {mode_fn(true);}}
             disabled=disabled
         >
@@ -136,9 +133,9 @@ pub struct ThemeToggleSwitchClass {
 
 #[component]
 pub fn ThemeToggleSwitch<F>(
-    #[prop(into, optional)] disabled: OptionMaybeSignal<bool>,
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] disabled: MaybeProp<bool>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] style: Option<String>,
     class: ThemeToggleSwitchClass,
     /// Required: Fn(bool) -> &'static str
     /// * (use leptos_tw_ui::components::theme::toggle::theme_mode)
@@ -152,9 +149,9 @@ where
 
     view! {
         <Button
-            id=id.unwrap_or(Box::new(""))
+            id=id.unwrap_or_default()
             class=class.wrapper
-            style=style.unwrap_or(Box::new(""))
+            style=style.unwrap_or_default()
             on_click={move |_e| {mode_fn(true);}}
             disabled=disabled
         >
@@ -177,11 +174,11 @@ where
 
 #[component]
 pub fn MenuToggleButton<F>(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] disabled: OptionMaybeSignal<bool>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] icon_class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] disabled: MaybeProp<bool>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] icon_class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
     #[prop(into, optional)] active: Option<bool>,
     on_change: F,
     // children: Children,
@@ -189,16 +186,16 @@ pub fn MenuToggleButton<F>(
 where
     F: Fn(bool) + 'static,
 {
-    let (on_off, set_on_off) = create_signal(active.unwrap_or(false));
+    let (on_off, set_on_off) = signal(active.unwrap_or(false));
 
     let light_class = icon_class.clone();
     let dark_class = icon_class.clone();
 
     view! {
         <Button
-            id=id.unwrap_or(Box::new(""))
+            id=id.unwrap_or_default()
             class=class
-            style=style.unwrap_or(Box::new(""))
+            style=style.unwrap_or_default()
             on_click={move |_e| {set_on_off(!on_off.get());on_change(on_off.get());}}
             disabled=disabled
         >

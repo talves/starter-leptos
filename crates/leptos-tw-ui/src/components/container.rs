@@ -1,16 +1,16 @@
-use crate::{components::variants::base::ClassVariant, OptionMaybeSignal};
-use leptos::*;
+use crate::components::variants::base::ClassVariant;
+use leptos::prelude::*;
 
 #[component]
 pub fn Container(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] variant: OptionMaybeSignal<ClassVariant>,
-    #[prop(into, optional)] class: OptionMaybeSignal<String>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] variant: MaybeProp<ClassVariant>,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {
-        <div id=id class={format!("{} {}", variant.get(), class.get())} style=style>
+        <div id=id class={format!("{} {}", variant.get().unwrap_or_default(), class.get().unwrap_or_default())} style=style>
             {children()}
         </div>
     }
@@ -34,9 +34,9 @@ where
 
 #[component]
 pub fn Main(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: Option<AttributeValue>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: Option<String>,
+    #[prop(into, optional)] style: Option<String>,
     children: Children,
 ) -> impl IntoView {
     view! {

@@ -1,6 +1,9 @@
-use leptos::{logging::log, *};
+use leptos::{logging::log, prelude::*};
 use leptos_meta::*;
-use leptos_router::*;
+use leptos_router::{
+    components::{Route, Router, Routes},
+    path,
+};
 use leptos_tw_ui::components::{
     buttons::button::LinkButton,
     menu::bars::{MenuBar, MenuHeader},
@@ -22,18 +25,17 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Layout>
-            // <Stylesheet id="leptos" href="/pkg/tailwind.css"/>
-            <Link rel="shortcut icon" type_="image/ico" href="/assets/favicon.ico"/>
-            <Router>
-                <Routes>
-                    <Route path="/" view=move || view! { <HomePage /> }/>
-                    <Route path="/features" view=move || view! { <FeaturesPage /> }/>
-                    <Route path="/counter" view=move || view! { <CounterPage /> }/>
-                    <Route path="/styleguide" view=move || view! { <StyleGuidePage /> }/>
+        <Router>
+            <Layout>
+                <Link rel="shortcut icon" type_="image/ico" href="/assets/favicon.ico"/>
+                <Routes transition=true fallback=|| "Page is missing">
+                    <Route path=path!("/") view=HomePage/>
+                    <Route path=path!("/features") view=FeaturesPage/>
+                    <Route path=path!("/counter") view=CounterPage/>
+                    <Route path=path!("/styleguide") view=StyleGuidePage/>
                 </Routes>
-            </Router>
-        </Layout>
+            </Layout>
+        </Router>
     }
 }
 
@@ -61,7 +63,7 @@ fn LayoutWrapper(children: Children) -> impl IntoView {
 
 #[component]
 fn Menu() -> impl IntoView {
-    let (active, set_active) = create_signal(false);
+    let (active, set_active) = signal(false);
     log!("loading Menu");
 
     view! {

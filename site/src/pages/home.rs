@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::*;
 use leptos_tw_ui::components::container::Main;
 
@@ -14,6 +14,6 @@ pub fn HomePage() -> impl IntoView {
               </div>
       </Main>
       // An empty Fragment is not created on the DOM
-      {Fragment::new(vec![])}
+      // {Fragment::new(vec![])}
     }
 }
