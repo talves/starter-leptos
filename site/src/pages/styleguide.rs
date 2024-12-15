@@ -4,7 +4,7 @@ use leptos_tw_ui::components::{
     buttons::button::Button,
     container::{Container, ContainerFromProp, Main},
     theme::toggle::{theme_mode, ThemeToggleButton, ThemeToggleSwitch},
-    typography::{Typography, TypographyVariant},
+    typography::{Code, Span, H1, H2, H3, H4, H5, H6, P},
 };
 
 use crate::sections::hero::Hero;
@@ -18,7 +18,7 @@ pub fn StyleGuidePage() -> impl IntoView {
         <Main id="main" class="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto pb-[100px] text-gray-900 dark:text-gray-400">
             <div>
                 //   <!-- Announcement Banner -->
-                <Typography variant=TypographyVariant::H1 class={TypographyClass::H1.get()}>Examples with Explanations</Typography>
+                <H1 class={TypographyClass::H1.get()}>Examples with Explanations</H1>
                 //   <!-- End Announcement Banner -->
             </div>
             <HeroSection/>
@@ -35,11 +35,11 @@ fn ButtonSection() -> impl IntoView {
 
     view! {
         <section class="max-w-[70rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
-            <Typography variant=TypographyVariant::H2 class={TypographyClass::H2.get()}>Buttons</Typography>
-            <div class="border rounded-xl shadow-sm  border-blue-600 dark:bg-slate-800 dark:border-slate-600 p-5 mt-3">
-                <Typography variant=TypographyVariant::H3 class={TypographyClass::H3.get()}>Inline Block</Typography>
+            <H2 class={TypographyClass::H2.get()} >Buttons</H2>
+            <div class="border rounded-xl shadow-sm border-blue-600 dark:bg-slate-800 dark:border-slate-600 p-5 mt-3">
+                <H3 class={TypographyClass::H3.get()}>Inline Block</H3>
                 <div class="p-4 inline-block">
-                    <Button class="ml-0 mx-1 bg-blue-400" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
+                    <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| web_sys::console::log_1(&e.target().unwrap())} variant={ButtonVariant::Solid.get()}>{"Solid"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Outline.get()}>{"Outline"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Ghost.get()}>{"Ghost"}</Button>
@@ -47,9 +47,9 @@ fn ButtonSection() -> impl IntoView {
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::White.get()}>{"White"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Link.get()}>{"Link"}</Button>
                 </div>
-                <Typography variant=TypographyVariant::H3 class={TypographyClass::H3.get()}>Grid (md:grid-cols-3)</Typography>
+                <H3 class={TypographyClass::H3.get()}>Grid (md:grid-cols-3)</H3>
                 <div class="p-4 grid md:grid-cols-3 gap-4">
-                    <Button class="ml-0 mx-1 bg-blue-400" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
+                    <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| web_sys::console::log_1(&e.target().unwrap())} variant={ButtonVariant::Solid.get()}>{"Solid"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Outline.get()}>{"Outline"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Ghost.get()}>{"Ghost"}</Button>
@@ -57,9 +57,9 @@ fn ButtonSection() -> impl IntoView {
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::White.get()}>{"White"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Link.get()}>{"Link"}</Button>
                 </div>
-                <Typography variant=TypographyVariant::H3 class={TypographyClass::H3.get()}>Flex (flex-wrap)</Typography>
+                <H3 class={TypographyClass::H3.get()}>Flex (flex-wrap)</H3>
                 <div class="p-4 flex flex-wrap gap-2">
-                    <Button class="ml-0 mx-1 bg-blue-400" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
+                    <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())}>{"Default (Unstyled)"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| web_sys::console::log_1(&e.target().unwrap())} variant={ButtonVariant::Solid.get()}>{"Solid"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Outline.get()}>{"Outline"}</Button>
                     <Button class="ml-0 mx-1" on_click={|e| println!("{}", e.to_string())} variant={ButtonVariant::Ghost.get()}>{"Ghost"}</Button>
@@ -79,27 +79,27 @@ fn ButtonSection() -> impl IntoView {
 fn TypographySection() -> impl IntoView {
     view! {
         <section class="max-w-[70rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
-            <Typography variant=TypographyVariant::H2 class={TypographyClass::H2.get()}>Typography</Typography>
+            <H2 class={TypographyClass::H2.get()}>Typography</H2>
             <div class="border rounded-xl shadow-sm  border-blue-600 dark:bg-slate-800 dark:border-slate-600 p-5 mt-3">
-                <Typography variant=TypographyVariant::H1 class={TypographyClass::H1.get()}>H1</Typography>
-                <Typography variant=TypographyVariant::H2 class={TypographyClass::H2.get()}>H2</Typography>
-                <Typography variant=TypographyVariant::H3 class={TypographyClass::H3.get()}>H3</Typography>
-                <Typography variant=TypographyVariant::H4 class={TypographyClass::H4.get()}>H4</Typography>
-                <Typography variant=TypographyVariant::H5 class={TypographyClass::H5.get()}>H5</Typography>
-                <Typography variant=TypographyVariant::H6 class={TypographyClass::H6.get()}>H6</Typography>
-                <Typography variant=TypographyVariant::Paragraph class={TypographyClass::Paragraph.get()}>This is a Paragraph</Typography>
-                <p>The word <Typography variant=TypographyVariant::SpanInline class={TypographyClass::Span.get()}>span</Typography> in this sentence is wrapped,
+                <H1 class={TypographyClass::H1.get()}>H1</H1>
+                <H2 class={TypographyClass::H2.get()}>H2</H2>
+                <H3 class={TypographyClass::H3.get()}>H3</H3>
+                <H4 class={TypographyClass::H4.get()}>H4</H4>
+                <H5 class={TypographyClass::H5.get()}>H5</H5>
+                <H6 class={TypographyClass::H6.get()}>H6</H6>
+                <P class={TypographyClass::P.get()}>This is a Paragraph</P>
+                <p>The word <Span class={TypographyClass::Span.get()}>span</Span> in this sentence is wrapped,
                 also the following code
-                <Typography variant=TypographyVariant::Code {inline:true} class={TypographyClass::Code.get()}>This is a Code block</Typography>
+                <Code inline=false class={TypographyClass::Code.get()}>This is a Code block</Code>
                 is wrapped.</p>
-                <p>The word <Typography variant={TypographyVariant::Span {inline:false}} class={TypographyClass::Span.get()}>span</Typography> in this sentence is wrapped,
+                <p>The word <Span inline=false class={TypographyClass::Span.get()}>span</Span> in this sentence is wrapped,
                 also the following code
-                <Typography variant=TypographyVariant::Code {inline:false} class={TypographyClass::Code.get()}>This is a Code block</Typography>
+                <Code inline=false class={TypographyClass::Code.get()}>This is a Code block</Code>
                 is wrapped but they are not inline.</p>
-                <Typography variant=TypographyVariant::Code {inline:false} class={TypographyClass::Code.get()}>
-                    <Typography variant=TypographyVariant::Span {inline:false}>let num: i32 = 100;</Typography>
-                    <Typography variant=TypographyVariant::Span {inline:false}>"println!{""{}"", num};"</Typography>
-                </Typography>
+                <Code inline=false class={TypographyClass::Code.get()}>
+                    <Span inline=false>let num: i32 = 100;</Span>
+                    <Span inline=false>"println!{""{}"", num};"</Span>
+                </Code>
                 <ContainerFromProp render_view=|| view! { <p class="mt-1 font-medium">
                       {"This is content from a render_view property"}
                   </p>} />
@@ -112,12 +112,12 @@ fn TypographySection() -> impl IntoView {
 fn DarkModeSection() -> impl IntoView {
     view! {
         <section class="max-w-[70rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
-            <Typography variant=TypographyVariant::H2 class={TypographyClass::H2.get()}>Dark/Light Theme Toggle</Typography>
-            <Typography variant=TypographyVariant::Paragraph class={TypographyClass::Paragraph.get()}>
+            <H2 class={TypographyClass::H2.get()}>Dark/Light Theme Toggle</H2>
+            <P class={TypographyClass::P.get()}>
                 There are currently two options for toggle component (ThemeToggleButton and ThemeToggleSwitch). All variants use an on click event to
                 change the mode of the theme from dark to light. The preference is stored into local storage for persistence between sessions.
                 Icon switching is not set by stored state, but by the theme setting using tailwindcss (hidden). Initial defaults to dark if there is a system preference.
-            </Typography>
+            </P>
             <div class="border rounded-xl shadow-sm border-blue-600 dark:bg-slate-800 dark:border-slate-600 p-5 mt-3">
                 <Container class="py-2">
                     <ThemeToggleButton mode_fn={theme_mode} class="text-yellow-700 dark:text-primary-400 focus:outline-none text-sm p-1"

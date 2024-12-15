@@ -190,7 +190,7 @@ pub enum TypographyClass {
     H4,
     H5,
     H6,
-    Paragraph,
+    P,
     Span,
     Code,
 }
@@ -256,7 +256,7 @@ impl TypographyClass {
             TypographyClass::H4 => ClassVariant::Vec(H4),
             TypographyClass::H5 => ClassVariant::Vec(H5),
             TypographyClass::H6 => ClassVariant::Vec(H6),
-            TypographyClass::Paragraph => ClassVariant::Vec(P),
+            TypographyClass::P => ClassVariant::Vec(P),
             TypographyClass::Span => ClassVariant::Vec(SPAN),
             TypographyClass::Code => ClassVariant::Vec(CODE),
         }
